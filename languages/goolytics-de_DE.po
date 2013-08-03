@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Goolytics - Simple Google Analytics v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-02-04 13:48:22+0000\n"
+"Last-Translator: alphawolf <scripts@schloebe.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: goolytics.php:209
+#: inc/options.php:10
+#@ goolytics
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: inc/options.php:15
+#@ goolytics
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
+
+#: inc/options.php:16
+#@ goolytics
+msgid "Example: UA-0000000-0"
+msgstr "Beispiel: UA-0000000-0"
+
+#: inc/options.php:19
+#@ goolytics
+msgid "Anonymize IP?"
+msgstr "IP verschleiern?"
+
+#: inc/options.php:19
+#@ goolytics
+msgid "(Recommended for german users)"
+msgstr "(Empfohlen f&uuml;r deutsche Nutzer)"
+
+#: inc/options.php:22
+#@ goolytics
+msgid "No"
+msgstr "Nein"
+
+#: inc/options.php:23
+#@ goolytics
+msgid "Yes"
+msgstr "Ja"
+
+#: inc/options.php:25
+#@ goolytics
+msgid "Tells Google Analytics to anonymize the information sent by the tracker objects by removing the last octet of the IP address prior to its storage."
+msgstr "Sagt Google Analytics, dass die Informationen vor dem Speichern anonymisiert werden sollen, indem das letzte Oktett der IP-Adresse entfernt wird."
+
+#: inc/options.php:37
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: inc/options.php:15
+#@ goolytics
+msgid "(My Analytics accounts)"
+msgstr "(Meine Analytics-Konten)"
+
+#: goolytics.php:237
+#@ goolytics
+msgid "Goolytics - Simple Google Analytics requires at least WordPress 3.0!"
+msgstr "Goolytics - Simple Google Analytics ben&ouml;tigt mindestens WordPress 3.0!"
+
+#: inc/options.php:43
+#@ goolytics
+msgid "More of my WordPress plugins"
+msgstr "Weitere meiner WordPress Plugins"
+
+#: inc/options.php:47
+#@ goolytics
+msgid "You may also be interested in some of my other plugins:"
+msgstr "Es könnten Sie ebenfalls einige meiner weiteren Plugins interessieren:"
+
+#: inc/options.php:48
+#@ goolytics
+msgid "Show other plugins by this author inline &raquo;"
+msgstr "Weitere Plugins dieses Autors zeigen &raquo;"
+
+#: inc/options.php:61
+#@ goolytics
+msgid "More plugins at: <a class=\"button rbutton\" href=\"http://www.schloebe.de/portfolio/\" target=\"_blank\">www.schloebe.de</a>"
+msgstr "Mehr Plugins auf: <a class=\"button rbutton\" href=\"http://www.schloebe.de/portfolio/\" target=\"_blank\">www.schloebe.de</a>"
+
+#: goolytics.php:224
+#, php-format
+#@ goolytics
+msgid "Thanks for activating Goolytics - Simple Google Analytics! Now head to the <a href=\"%s\">settings page</a>, finish setting up the plugin and you are good to go!"
+msgstr "Vielen Dank, dass Sie Goolytics - Simple Google Analytics aktiviert haben! Bitte richten Sie nun in den <a href=\"%s\">Einstellungen</a> das Plugin fertig ein, und Sie haben es geschafft!"
+
+#: inc/options.php:28
+#@ goolytics
+msgid "According to your backend locale, you seem to be a german user. It is recommended to set 'Anonymize IP' to Yes in order to respect german data protection rules!"
+msgstr "Basierend auf der Sprache Ihres Backends scheinen Sie ein deutscher Nutzer zu sein. Es wird empfohlen, die Option 'IP verschleiern' auf Ja zu setzen, um den Google Analytics-Code datenschutzkonform nach deutschem Recht zu machen!"
+
