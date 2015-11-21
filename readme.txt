@@ -3,7 +3,7 @@ Contributors: Alphawolf
 Donate link: http://www.schloebe.de/donate/
 Tags: google, analytics, web tracking, tracking, goolytics
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 4.4.9999
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,8 @@ Unlike many other Google Analytics plugins it offers to anonymize IPs as it's ne
 * Anonymize IP (recommended for german users to respect german data protection rules)
 
 [Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](http://twitter.com/wpseek "Developer on Twitter")
+
+[Become A Patron, Support The Developer.](http://www.patreon.com/oliver_schloebe "Become A Patron, Support The Developer.")
 
 **Included languages:**
 
@@ -42,6 +44,10 @@ None. Yet.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.0.1 =
+* 'Redefining already defined constructor' bug that occured on several configurations
+* WP 3.8 compatibility
 
 = 1.0 =
 * Initial release

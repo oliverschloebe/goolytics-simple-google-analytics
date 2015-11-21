@@ -1,14 +1,14 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.0
+Version: 1.0.1
 Plugin URI: http://www.schloebe.de/wordpress/goolytics-plugin/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
 Author URI: http://www.schloebe.de/
 
 
-Copyright 2013 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2015 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("GOOLYTICSVERSION", "1.0");
+define("GOOLYTICSVERSION", "1.0.1");
 
 /**
  * Define the global var GOOLYTICSMINWP, returning bool if at least WP 3.0 is running
@@ -68,20 +68,6 @@ class Goolytics {
  	* The Goolytics class constructor
  	* initializing required stuff for the plugin
  	* 
-	* PHP 4 Compatible Goolytics
- 	*
- 	* @since 		1.0
- 	* @author 		scripts@schloebe.de
- 	*/
-	function Goolytics() {
-		$this->__construct();
-	}
-	
-	
-	/**
- 	* The Goolytics class constructor
- 	* initializing required stuff for the plugin
- 	* 
 	* PHP 5 Constructor
  	*
  	* @since 		1.0
@@ -100,12 +86,26 @@ class Goolytics {
 		
 		add_filter('plugin_action_links', array(&$this, 'plugin_action_links'), 10, 2);
 		
-		add_action('admin_init', array(&$this, 'load_textdomain'));
+		add_action('plugins_loaded', array(&$this, 'load_textdomain'));
 		add_action('admin_init', array(&$this, 'admin_init'));
 		add_action('admin_menu', array(&$this, 'admin_menu_goolytics'));
 		
 		if (!is_admin())
 			add_action('wp_head', array(&$this, 'print_code'));
+	}
+	
+	
+	/**
+ 	* The Goolytics class constructor
+ 	* initializing required stuff for the plugin
+ 	* 
+	* PHP 4 Compatible Goolytics
+ 	*
+ 	* @since 		1.0
+ 	* @author 		scripts@schloebe.de
+ 	*/
+	function Goolytics() {
+		$this->__construct();
 	}
 	
 	
@@ -191,7 +191,7 @@ class Goolytics {
  	*/
 	function load_textdomain() {
 		if($this->textdomain_loaded) return;
-		load_plugin_textdomain('goolytics', false, dirname(plugin_basename(__FILE__)) . '/languages');
+		load_plugin_textdomain('goolytics', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 		$this->textdomain_loaded = true;
 	}
 	

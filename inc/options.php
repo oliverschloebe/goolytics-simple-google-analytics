@@ -1,3 +1,41 @@
+<?php
+require_once( trailingslashit(dirname(__FILE__)) . 'google-api-php-client/src/Google_Client.php');
+require_once( trailingslashit(dirname(__FILE__)) . 'google-api-php-client/src/contrib/Google_AnalyticsService.php');
+
+$client = new Google_Client();
+$client->setApplicationName("Goolytics - Simple Google Analytics");
+
+$service = new Google_AnalyticsService($client);
+
+if (isset($_GET['logout'])) {
+	unset($_SESSION['token']);
+}
+
+if (isset($_GET['code'])) {
+	$client->authenticate();
+	$_SESSION['token'] = $client->getAccessToken();
+	$redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+	header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+}
+
+if (isset($_SESSION['token'])) {
+	$client->setAccessToken($_SESSION['token']);
+}
+
+if ($client->getAccessToken()) {
+	$props = $service->management_webproperties->listManagementWebproperties("~all");
+	print "<h1>Web Properties</h1><pre>" . print_r($props, true) . "</pre>";
+
+	$accounts = $service->management_accounts->listManagementAccounts();
+	print "<h1>Accounts</h1><pre>" . print_r($accounts, true) . "</pre>";
+
+	$_SESSION['token'] = $client->getAccessToken();
+} else {
+	$authUrl = $client->createAuthUrl();
+	print "<a class='login' href='$authUrl'>Connect Me!</a>";
+}
+?>
+
 <div class="wrap">
 	<h2>Goolytics - Simple Google Analytics</h2>
 	
