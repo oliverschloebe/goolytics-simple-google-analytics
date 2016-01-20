@@ -1,5 +1,5 @@
 <?php
-require_once( trailingslashit(dirname(__FILE__)) . 'google-api-php-client/src/Google_Client.php');
+/*require_once( trailingslashit(dirname(__FILE__)) . 'google-api-php-client/src/Google_Client.php');
 require_once( trailingslashit(dirname(__FILE__)) . 'google-api-php-client/src/contrib/Google_AnalyticsService.php');
 
 $client = new Google_Client();
@@ -33,7 +33,7 @@ if ($client->getAccessToken()) {
 } else {
 	$authUrl = $client->createAuthUrl();
 	print "<a class='login' href='$authUrl'>Connect Me!</a>";
-}
+}*/
 ?>
 
 <div class="wrap">
@@ -45,8 +45,8 @@ if ($client->getAccessToken()) {
 		
 		<div id="poststuff">
 			<div class="postbox">
-				<h3 style="cursor:default;"><?php _e('Settings', self::_NAMESPACE); ?></h3>
 				<div class="inside">
+					<h3><?php _e('Settings', self::_NAMESPACE); ?></h3>
 					<table class="form-table">
 						
 					<tr valign="top">
@@ -78,28 +78,30 @@ if ($client->getAccessToken()) {
 			</div>
 			
 			<div id="ridwpa_plugins_box" class="postbox">
-		      	<h3 style="cursor:default;"><?php _e('More of my WordPress plugins', self::_NAMESPACE); ?></h3>
-				<table class="form-table">
-		 		<tr>
-		 			<td>
-		 				<?php _e('You may also be interested in some of my other plugins:', self::_NAMESPACE); ?>
-						<p id="authorplugins-wrap"><input id="authorplugins-start" value="<?php _e('Show other plugins by this author inline &raquo;', self::_NAMESPACE); ?>" class="button-secondary" type="button"></p>
-						<div id="authorplugins-wrap">
-							<div id='authorplugins'>
-								<div class='authorplugins-holder full' id='authorplugins_secondary'>
-									<div class='authorplugins-content'>
-										<ul id="authorpluginsul">
-											
-										</ul>
-										<div class="clear"></div>
+				<div class="inside">
+			      	<h3><?php _e('More of my WordPress plugins', self::_NAMESPACE); ?></h3>
+					<table class="form-table">
+			 		<tr>
+			 			<td>
+			 				<?php _e('You may also be interested in some of my other plugins:', self::_NAMESPACE); ?>
+							<p id="authorplugins-wrap"><input id="authorplugins-start" value="<?php _e('Show other plugins by this author inline &raquo;', self::_NAMESPACE); ?>" class="button-secondary" type="button"></p>
+							<div id="authorplugins-wrap">
+								<div id='authorplugins'>
+									<div class='authorplugins-holder full' id='authorplugins_secondary'>
+										<div class='authorplugins-content'>
+											<ul id="authorpluginsul">
+												
+											</ul>
+											<div class="clear"></div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-		 				<?php _e('More plugins at: <a class="button rbutton" href="http://www.schloebe.de/portfolio/" target="_blank">www.schloebe.de</a>', self::_NAMESPACE); ?>
-		 			</td>
-		 		</tr>
-				</table>
+			 				<?php _e('More plugins at: <a class="button rbutton" href="http://www.schloebe.de/portfolio/" target="_blank">www.schloebe.de</a>', self::_NAMESPACE); ?>
+			 			</td>
+			 		</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	</form>

@@ -45,6 +45,9 @@ None. Yet.
 
 == Changelog ==
 
+= 1.0.2 =
+* Settings page visual improvements
+
 = 1.0.1 =
 * 'Redefining already defined constructor' bug that occured on several configurations
 * WP 3.8 compatibility
