@@ -45,6 +45,9 @@ None. Yet.
 
 == Changelog ==
 
+= 1.0.3 =
+* Settings page visual improvements (Thanks pixelkicks!)
+
 = 1.0.2 =
 * Settings page visual improvements
 

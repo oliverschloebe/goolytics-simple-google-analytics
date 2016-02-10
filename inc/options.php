@@ -51,12 +51,12 @@ if ($client->getAccessToken()) {
 						
 					<tr valign="top">
 						<th scope="row" style="width:180px;text-align:right;"><label for="goolytics_web_property_id"><strong><?php _e('Google Analytics ID', self::_NAMESPACE); ?>:</strong><br /><small><a href="https://www.google.com/analytics/web/" target="_blank"><?php _e('(My Analytics accounts)', self::_NAMESPACE); ?></a></small></label></th>
-						<td><input type="text" style="width:100px;" id="goolytics_web_property_id" name="goolytics_web_property_id" value="<?php echo get_option('goolytics_web_property_id'); ?>" /> <small><?php _e('Example: UA-0000000-0', self::_NAMESPACE); ?></small></td>
+						<td><input type="text" style="width:130px;" id="goolytics_web_property_id" name="goolytics_web_property_id" value="<?php echo get_option('goolytics_web_property_id'); ?>" /> <small><?php _e('Example: UA-0000000-0', self::_NAMESPACE); ?></small></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row" style="width:180px;text-align:right;"><label for="goolytics_anonymize_ip"><strong><?php _e('Anonymize IP?', self::_NAMESPACE); ?>:</strong><br /><small><?php _e('(Recommended for german users)', self::_NAMESPACE); ?></small></label></th>
 						<td>
-							<select id="goolytics_anonymize_ip" name="goolytics_anonymize_ip" style="width:100px;">
+							<select id="goolytics_anonymize_ip" name="goolytics_anonymize_ip" style="width:130px;">
 								<option value="0" <?php selected(get_option('goolytics_anonymize_ip'), 0); ?>><?php _e('No', self::_NAMESPACE) ; ?></option>
 								<option value="1" <?php selected(get_option('goolytics_anonymize_ip'), 1); ?>><?php _e('Yes', self::_NAMESPACE) ; ?></option>
 							</select>
