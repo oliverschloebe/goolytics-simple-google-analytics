@@ -1,12 +1,12 @@
 === Goolytics - Simple Google Analytics ===
 Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
-Tags: google, analytics, web tracking, tracking, goolytics
+Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr
 Requires at least: 3.0
-Tested up to: 5.2.9999
+Tested up to: 5.3.9999
 Stable tag: trunk
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A simple Google Analytics solution that works without slowing down your WordPress installation.
 
@@ -19,9 +19,9 @@ Unlike many other Google Analytics plugins it offers to anonymize IPs as it's ne
 
 * Simple and guided setup
 * Lightweight and fast plugin code
-* Anonymize IP (recommended for german users to respect german data protection rules)
+* Anonymize IP (recommended for german users to respect german/european data protection rules DSGVO/GDPR)
 
-[Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](http://twitter.com/wpseek "Developer on Twitter")
+[Developer on Twitter](https://twitter.com/wpseek "Developer on Twitter")
 
 **Included languages:**
 
@@ -42,6 +42,9 @@ None. Yet.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.0.6 =
+* WordPress 5.3 compatibility
 
 = 1.0.5 =
 * WordPress 4.8 compatibility
@@ -66,4 +69,3 @@ None. Yet.
 == Screenshots ==
 
 1. Admin Options Page
-

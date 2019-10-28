@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.0.5
+Version: 1.0.6
 Plugin URI: https://www.schloebe.de/wordpress/goolytics-plugin/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
@@ -10,7 +10,7 @@ Text Domain: goolytics
 Domain Path: /languages
 
 
-Copyright 2013-2017 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2019 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("GOOLYTICSVERSION", "1.0.5");
+define("GOOLYTICSVERSION", "1.0.6");
 
 /**
  * Define the global var GOOLYTICSMINWP, returning bool if at least WP 3.0 is running
