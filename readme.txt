@@ -1,7 +1,7 @@
 === Goolytics - Simple Google Analytics ===
 Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
-Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr
+Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr, usercentrics, consent, e-recht24, e-recht24.de
 Requires at least: 3.0
 Tested up to: 5.3.9999
 Stable tag: trunk
@@ -18,8 +18,9 @@ Unlike many other Google Analytics plugins it offers to anonymize IPs as it's ne
 **Features:**
 
 * Simple and guided setup
-* Lightweight and fast plugin code
-* Anonymize IP (recommended for german users to respect german/european data protection rules DSGVO/GDPR)
+* Lightweight and fast
+* Anonymize IP (recommended for german users to respect german/european data protection rules according to DSGVO/GDPR)
+* Usercentrics support (recommended for german users to respect german/european data protection rules according to DSGVO/GDPR)
 
 [Developer on Twitter](https://twitter.com/wpseek "Developer on Twitter")
 
@@ -42,6 +43,10 @@ None. Yet.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.1.0 =
+* Switched from old ga.js-Code to Global Site Tag / Universal Analytics.
+* Added Usercentrics support (including e-recht24.de's Usercentrics consent tool!)
 
 = 1.0.6 =
 * WordPress 5.3 compatibility

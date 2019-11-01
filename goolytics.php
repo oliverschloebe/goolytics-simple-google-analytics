@@ -1,8 +1,8 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.0.6
-Plugin URI: https://www.schloebe.de/wordpress/goolytics-plugin/
+Version: 1.1.0
+Plugin URI: https://wordpress.org/plugins/goolytics-simple-google-analytics/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
 Author URI: https://www.schloebe.de/
@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("GOOLYTICSVERSION", "1.0.6");
+define("GOOLYTICSVERSION", "1.1.0");
 
 /**
  * Define the global var GOOLYTICSMINWP, returning bool if at least WP 3.0 is running
@@ -124,6 +124,7 @@ class Goolytics {
 		
 		register_setting(self::_NAMESPACE, 'goolytics_web_property_id');
 		register_setting(self::_NAMESPACE, 'goolytics_anonymize_ip');
+		register_setting(self::_NAMESPACE, 'goolytics_usercentrics_support');
 		
 		if( $pagenow == 'options-general.php' && isset( $_GET['page'] ) && $_GET['page'] == 'goolytics' )
 			require_once( trailingslashit(dirname (__FILE__)) . 'inc/authorplugins.inc.php');
@@ -161,27 +162,30 @@ class Goolytics {
 	function print_code() {
 		$web_property_id = get_option('goolytics_web_property_id');
 		$anonymize_ip = get_option('goolytics_anonymize_ip');
+		$usercentrics_support = get_option('goolytics_usercentrics_support');
 		
-		$code  = "\n";
-		$code .= '<!-- Goolytics - Simple Google Analytics Begin -->' . "\n";
-		$code .= '<script type="text/javascript">' . "\n";
-		$code .= 'var _gaq = _gaq || [];' . "\n";
-		$code .= "_gaq.push(['_setAccount', '" . $web_property_id . "']);\n";
-		if( $anonymize_ip ) $code .= "_gaq.push(['_gat._anonymizeIp']);\n";
-		$code .= "_gaq.push(['_trackPageview']);\n";
-		$code .= "\n";
-               
-		// Code Google
-		$code .= '(function() {' . "\n";
-		$code .= "\t" . 'var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;' . "\n";
-		$code .= "\t" . 'ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';' . "\n";
-		$code .= "\t" . 'var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);' . "\n";
-		$code .= '})();' . "\n";
-		$code .= '</script>' . "\n";
-		$code .= '<!-- Goolytics - Simple Google Analytics End -->' . "\n\n";
-		
+		$usercentrics_additional = '';
+		if( $usercentrics_support ) {
+			$usercentrics_additional = ' type="text/plain" data-usercentrics="Google Analytics"';
+		}
+
+		$code = '<!-- Goolytics - Simple Google Analytics Begin -->' . PHP_EOL;
+		$code .= '<script' . $usercentrics_additional . ' async src="//www.googletagmanager.com/gtag/js?id=' . $web_property_id . '"></script>' . PHP_EOL;
+		$code .= "<script" . $usercentrics_additional . ">";
+		$code .= "window.dataLayer = window.dataLayer || [];" . PHP_EOL;
+		$code .= "function gtag(){dataLayer.push(arguments);}" . PHP_EOL;
+		$code .= "gtag('js', new Date());" . PHP_EOL;
+		$code .= PHP_EOL;
+		if( $anonymize_ip ) {
+			$code .= "gtag('config', '" . $web_property_id . "', { 'anonymize_ip': true });" . PHP_EOL;
+		} else {
+			$code .= "gtag('config', '" . $web_property_id . "');" . PHP_EOL;
+		}
+		$code .= "</script>" . PHP_EOL;
+		$code .= "<!-- Goolytics - Simple Google Analytics End -->" . PHP_EOL;
+
 		if( $web_property_id != '' )
-			echo $code;
+			echo PHP_EOL . $code . PHP_EOL;
 	}
 	
 	
