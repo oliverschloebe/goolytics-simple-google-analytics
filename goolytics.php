@@ -1,14 +1,13 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.1.0
+Version: 1.1.1
 Plugin URI: https://wordpress.org/plugins/goolytics-simple-google-analytics/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
 Author URI: https://www.schloebe.de/
-Text Domain: goolytics
+Text Domain: goolytics-simple-google-analytics
 Domain Path: /languages
-
 
 Copyright 2013-2019 Oliver Schlöbe (email : scripts@schloebe.de)
 
@@ -37,7 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("GOOLYTICSVERSION", "1.1.0");
+define("GOOLYTICSVERSION", "1.1.1");
 
 /**
  * Define the global var GOOLYTICSMINWP, returning bool if at least WP 3.0 is running
@@ -197,7 +196,7 @@ class Goolytics {
  	*/
 	function load_textdomain() {
 		if($this->textdomain_loaded) return;
-		load_plugin_textdomain('goolytics', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+		load_plugin_textdomain('goolytics-simple-google-analytics', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 		$this->textdomain_loaded = true;
 	}
 	
@@ -207,12 +206,13 @@ class Goolytics {
  	*
  	* @since 		1.0
  	* @author 		scripts@schloebe.de
-	& @param			array $links
-	& @return		array $links
+	* @param		array $links
+	* @param		string $file
+	* @return		array $links
  	*/
 	function plugin_action_links( $links, $file ) {
 		if ( $file == plugin_basename(__FILE__) ) {
-			$settings_link = '<a href="' . menu_page_url('goolytics', false) . '">' . __('Settings', self::_NAMESPACE) .'</a>' ;
+			$settings_link = '<a href="' . menu_page_url('goolytics', false) . '">' . __('Settings', 'goolytics-simple-google-analytics') .'</a>' ;
 			array_unshift($links, $settings_link);
 		}
 		
@@ -227,7 +227,7 @@ class Goolytics {
  	* @author 		scripts@schloebe.de
  	*/
 	function user_setup_notice() {
-		echo "<div id='wpversionfailedmessage' class='updated settings-error'><p>" . sprintf(__('Thanks for activating Goolytics - Simple Google Analytics! Now head to the <a href="%s">settings page</a>, finish setting up the plugin and you are good to go!', self::_NAMESPACE), menu_page_url('goolytics', false)) . "</p></div>";
+		echo "<div id='wpversionfailedmessage' class='updated settings-error'><p>" . sprintf(__('Thanks for activating Goolytics - Simple Google Analytics! Now head to the <a href="%s">settings page</a>, finish setting up the plugin and you are good to go!', 'goolytics-simple-google-analytics'), menu_page_url('goolytics', false)) . "</p></div>";
 	}
 	
 	
@@ -240,7 +240,7 @@ class Goolytics {
  	* @author 		scripts@schloebe.de
  	*/
 	function require_wpversion_message() {
-		echo "<div id='wpversionfailedmessage' class='error fade'><p>" . __('Goolytics - Simple Google Analytics requires at least WordPress 3.0!', self::_NAMESPACE) . "</p></div>";
+		echo "<div id='wpversionfailedmessage' class='error fade'><p>" . __('Goolytics - Simple Google Analytics requires at least WordPress 3.0!', 'goolytics-simple-google-analytics') . "</p></div>";
 	}
 	
 }

@@ -44,6 +44,9 @@ None. Yet.
 
 == Changelog ==
 
+= 1.1.1 =
+* Localization preparations for translate.wordpress.org
+
 = 1.1.0 =
 * Switched from old ga.js-Code to Global Site Tag / Universal Analytics.
 * Added Usercentrics support (including e-recht24.de's Usercentrics consent tool!)
