@@ -3,7 +3,7 @@ Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
 Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr, usercentrics, consent, e-recht24, e-recht24.de
 Requires at least: 3.0
-Tested up to: 5.5.9999
+Tested up to: 5.6.9999
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,7 @@ Unlike many other Google Analytics plugins it offers to anonymize IPs as it's ne
 
 * English
 * German (de_DE) (Thanks to me ;-))
+* Spanish (es_ES) (Spanish translation by [Ibidem Group](https://www.ibidem-translations.com))
 
 **Looking for more WordPress plugins? Visit [www.schloebe.de/portfolio/](https://www.schloebe.de/portfolio/)**
 
