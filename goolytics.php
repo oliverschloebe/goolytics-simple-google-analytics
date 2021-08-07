@@ -9,7 +9,7 @@ Author URI: https://www.schloebe.de/
 Text Domain: goolytics-simple-google-analytics
 Domain Path: /languages
 
-Copyright 2013-2019 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2021 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
