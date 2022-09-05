@@ -3,7 +3,7 @@ Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
 Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr, usercentrics, consent, e-recht24, e-recht24.de
 Requires at least: 3.0
-Tested up to: 6.9.9999
+Tested up to: 6.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -44,6 +44,9 @@ None. Yet.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed Admin+ Stored XSS vulnerability
 
 = 1.1.1 =
 * Localization preparations for translate.wordpress.org

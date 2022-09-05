@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Goolytics - Simple Google Analytics\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-04 11:21+0000\n"
-"PO-Revision-Date: 2019-11-04 12:42+0000\n"
+"PO-Revision-Date: 2022-09-02 19:16+0000\n"
 "Last-Translator: Alphawolf <scripts@schloebe.de>\n"
-"Language-Team: Deutsch\n"
+"Language-Team: German\n"
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "Google Analytics ID"
 msgid "Goolytics - Simple Google Analytics"
 msgstr "Goolytics - Simple Google Analytics"
 
-#: goolytics.php:243
+#: goolytics.php:246
 msgid "Goolytics - Simple Google Analytics requires at least WordPress 3.0!"
 msgstr "Goolytics - Simple Google Analytics benötigt mindestens WordPress 3.0!"
 
@@ -125,7 +125,7 @@ msgstr "Nein"
 msgid "Oliver Schl&ouml;be"
 msgstr "Oliver Schl&ouml;be"
 
-#: goolytics.php:215 inc/options.php:11
+#: goolytics.php:218 inc/options.php:11
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -141,7 +141,7 @@ msgstr ""
 "Sagt Google Analytics, dass die Informationen vor dem Speichern anonymisiert "
 "werden sollen, indem das letzte Oktett der IP-Adresse entfernt wird."
 
-#: goolytics.php:230
+#: goolytics.php:233
 #, php-format
 msgid ""
 "Thanks for activating Goolytics - Simple Google Analytics! Now head to the "
@@ -151,6 +151,18 @@ msgstr ""
 "Danke für das Aktivieren von Goolytics - Simple Google Analytics! Auf der <a "
 "href=\"%s\">Options-Seite</a> sollten nun die Einstellungen festgelegt "
 "werden. Danach ist alles bereit."
+
+#: goolytics.php:264
+msgid "The Google Analytics ID is empty."
+msgstr "Die Google Analytics ID ist leer."
+
+#: goolytics.php:271
+msgid ""
+"The Google Analytics ID you entered is invalid. Please check your input and "
+"try again."
+msgstr ""
+"Die von Ihnen eingegebene Google Analytics-ID ist ungültig. Bitte überprüfen "
+"Sie Ihre Eingabe und versuchen Sie es erneut."
 
 #: inc/options.php:23 inc/options.php:38
 msgid "Yes"

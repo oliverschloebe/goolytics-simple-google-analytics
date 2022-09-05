@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.1.1
+Version: 1.1.2
 Plugin URI: https://wordpress.org/plugins/goolytics-simple-google-analytics/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
@@ -9,7 +9,7 @@ Author URI: https://www.schloebe.de/
 Text Domain: goolytics-simple-google-analytics
 Domain Path: /languages
 
-Copyright 2013-2021 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2022 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -121,7 +121,10 @@ class Goolytics {
 		
 		if ( !function_exists("add_action") ) return;
 		
-		register_setting(self::_NAMESPACE, 'goolytics_web_property_id');
+		register_setting(self::_NAMESPACE, 'goolytics_web_property_id', array(
+			'type' => 'string',
+			'sanitize_callback'	=> array(&$this, 'sanitize_web_property_id')
+		));
 		register_setting(self::_NAMESPACE, 'goolytics_anonymize_ip');
 		register_setting(self::_NAMESPACE, 'goolytics_usercentrics_support');
 		
@@ -241,6 +244,36 @@ class Goolytics {
  	*/
 	function require_wpversion_message() {
 		echo "<div id='wpversionfailedmessage' class='error fade'><p>" . __('Goolytics - Simple Google Analytics requires at least WordPress 3.0!', 'goolytics-simple-google-analytics') . "</p></div>";
+	}
+	
+	
+	/**
+ 	* Sanitize web_property_id input
+ 	*
+ 	* @since 		1.1.2
+ 	* @author 		scripts@schloebe.de
+ 	*/
+	function sanitize_web_property_id( $input ) {
+		if( preg_match('/^[A-Z][A-Z0-9]?-[A-Z0-9]{4,10}(?:\-[1-9]\d{0,3})?$/', $input) ) {
+			return $input;
+		} else {
+			if( empty($input) ) {
+				add_settings_error(
+					'goolytics_web_property_id',
+					'goolytics_web_property_id',
+					__('The Google Analytics ID is empty.', 'goolytics-simple-google-analytics'),
+					'error'
+				);
+			} else {
+				add_settings_error(
+					'goolytics_web_property_id',
+					'goolytics_web_property_id',
+					__('The Google Analytics ID you entered is invalid. Please check your input and try again.', 'goolytics-simple-google-analytics'),
+					'error'
+				);
+			}
+			return '';
+		}
 	}
 	
 }

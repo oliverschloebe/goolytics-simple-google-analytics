@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Goolytics - Simple Google Analytics\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-04 11:21+0000\n"
+"POT-Creation-Date: 2022-09-02 19:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Goolytics - Simple Google Analytics"
 msgstr ""
 
-#: goolytics.php:243
+#: goolytics.php:246
 msgid "Goolytics - Simple Google Analytics requires at least WordPress 3.0!"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Oliver Schl&ouml;be"
 msgstr ""
 
-#: goolytics.php:215 inc/options.php:11
+#: goolytics.php:218 inc/options.php:11
 msgid "Settings"
 msgstr ""
 
@@ -124,12 +124,22 @@ msgid ""
 "objects by removing the last octet of the IP address prior to its storage."
 msgstr ""
 
-#: goolytics.php:230
+#: goolytics.php:233
 #, php-format
 msgid ""
 "Thanks for activating Goolytics - Simple Google Analytics! Now head to the "
 "<a href=\"%s\">settings page</a>, finish setting up the plugin and you are "
 "good to go!"
+msgstr ""
+
+#: goolytics.php:264
+msgid "The Google Analytics ID is empty."
+msgstr ""
+
+#: goolytics.php:271
+msgid ""
+"The Google Analytics ID you entered is invalid. Please check your input and "
+"try again."
 msgstr ""
 
 #: inc/options.php:23 inc/options.php:38
