@@ -3,7 +3,7 @@ Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
 Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr, usercentrics, consent, e-recht24, e-recht24.de
 Requires at least: 3.0
-Tested up to: 6.4.99
+Tested up to: 6.8.99
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
