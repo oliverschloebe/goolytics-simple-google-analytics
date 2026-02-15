@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: Goolytics - Simple Google Analytics
-Version: 1.1.2
+Version: 1.1.3
 Plugin URI: https://wordpress.org/plugins/goolytics-simple-google-analytics/
 Description: A simple Google Analytics solution that works without slowing down your WordPress installation.
 Author: Oliver Schl&ouml;be
@@ -9,7 +9,7 @@ Author URI: https://www.schloebe.de/
 Text Domain: goolytics-simple-google-analytics
 Domain Path: /languages
 
-Copyright 2013-2022 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2013-2026 Oliver Schlöbe (email : wordpress@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("GOOLYTICSVERSION", "1.1.1");
+define("GOOLYTICSVERSION", "1.1.3");
 
 /**
  * Define the global var GOOLYTICSMINWP, returning bool if at least WP 3.0 is running
@@ -50,7 +50,7 @@ define('GOOLYTICSMINWP', version_compare($GLOBALS['wp_version'], '2.9.999', '>')
 * @package 		WordPress_Plugins
 * @subpackage 	Goolytics
 * @since 		1.0
-* @author 		scripts@schloebe.de
+* @author 		wordpress@schloebe.de
 */
 class Goolytics {
 	
@@ -72,9 +72,9 @@ class Goolytics {
 	* PHP 5 Constructor
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/		
-	function __construct() {
+	public function __construct() {
 		$this->textdomain_loaded = false;
 		
 		if ( !GOOLYTICSMINWP ) {
@@ -103,7 +103,7 @@ class Goolytics {
 	* PHP 4 Compatible Goolytics
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function Goolytics() {
 		$this->__construct();
@@ -114,7 +114,7 @@ class Goolytics {
  	* Initialize and load the plugin stuff for the admin area
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function admin_init() {
 		global $pagenow;
@@ -137,7 +137,7 @@ class Goolytics {
  	* Adds the admin menu
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function admin_menu_goolytics() {
 		add_options_page('Goolytics - Simple Google Analytics', 'Goolytics', self::_SETTINGS_AUTH_LEVEL, self::_NAMESPACE, array(&$this, 'options_page_goolytics'));
@@ -148,7 +148,7 @@ class Goolytics {
  	* Generates the admin menu
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function options_page_goolytics() {
 		include( trailingslashit( dirname( __FILE__ ) ) . 'inc/options.php' );
@@ -159,7 +159,7 @@ class Goolytics {
  	* Prints the Google Analyitcs code for the frontend
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function print_code() {
 		$web_property_id = get_option('goolytics_web_property_id');
@@ -195,7 +195,7 @@ class Goolytics {
  	* Initialize and load the plugin textdomain
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function load_textdomain() {
 		if($this->textdomain_loaded) return;
@@ -208,7 +208,7 @@ class Goolytics {
  	* Adds Settings link to the action links on plugin listing panel
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
 	* @param		array $links
 	* @param		string $file
 	* @return		array $links
@@ -227,7 +227,7 @@ class Goolytics {
  	* Points the user to setup the plugin after activation
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function user_setup_notice() {
 		echo "<div id='wpversionfailedmessage' class='updated settings-error'><p>" . sprintf(__('Thanks for activating Goolytics - Simple Google Analytics! Now head to the <a href="%s">settings page</a>, finish setting up the plugin and you are good to go!', 'goolytics-simple-google-analytics'), menu_page_url('goolytics', false)) . "</p></div>";
@@ -240,7 +240,7 @@ class Goolytics {
  	* if required WP version is less than 2.6
  	*
  	* @since 		1.0
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function require_wpversion_message() {
 		echo "<div id='wpversionfailedmessage' class='error fade'><p>" . __('Goolytics - Simple Google Analytics requires at least WordPress 3.0!', 'goolytics-simple-google-analytics') . "</p></div>";
@@ -251,7 +251,7 @@ class Goolytics {
  	* Sanitize web_property_id input
  	*
  	* @since 		1.1.2
- 	* @author 		scripts@schloebe.de
+ 	* @author 		wordpress@schloebe.de
  	*/
 	function sanitize_web_property_id( $input ) {
 		if( preg_match('/^[A-Z][A-Z0-9]?-[A-Z0-9]{4,10}(?:\-[1-9]\d{0,3})?$/', $input) ) {

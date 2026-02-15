@@ -1,9 +1,9 @@
 === Goolytics - Simple Google Analytics ===
 Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
-Tags: google, analytics, web tracking, tracking, goolytics, dsgvo, gdpr, usercentrics, consent, e-recht24, e-recht24.de
+Tags: analytics, web tracking, dsgvo, gdpr, usercentrics
 Requires at least: 3.0
-Tested up to: 6.8.99
+Tested up to: 6.9.99
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,7 +22,7 @@ Unlike many other Google Analytics plugins it offers to anonymize IPs as it's ne
 * Anonymize IP (recommended for german users to respect german/european data protection rules according to DSGVO/GDPR)
 * Usercentrics support (recommended for german users to respect german/european data protection rules according to DSGVO/GDPR)
 
-[Developer on Twitter](https://twitter.com/wpseek "Developer on Twitter")
+[Developer on X](https://x.com/wpseek "Developer on X") [Developer on Bluesky](https://bsky.app/profile/cyberblitzbirne.bsky.social "Developer on Bluesky")
 
 **Included languages:**
 
@@ -44,6 +44,9 @@ None. Yet.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.1.3 =
+* WordPress 6.9 compatibility
 
 = 1.1.2 =
 * Fixed Admin+ Stored XSS vulnerability
