@@ -3,7 +3,7 @@ Contributors: Alphawolf
 Donate link: https://www.schloebe.de/donate/
 Tags: analytics, web tracking, dsgvo, gdpr, usercentrics
 Requires at least: 3.0
-Tested up to: 6.9.99
+Tested up to: 7.0.99
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
